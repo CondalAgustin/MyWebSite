@@ -1,0 +1,50 @@
+ .panel {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: grab;
+    transition: box-shadow 0.5s ease;
+    will-change: transform;
+}
+
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: filter 0.6s ease, opacity 0.6s ease;
+}
+
+/* ---- FRONT ---- */
+.front {
+    transform: rotateY(0deg);
+    filter: brightness(1);
+}
+
+.back {
+    transform: rotateY(180deg);
+    filter: brightness(0.75);
+}
+
+/* ---- Hint ---- */
+.hint {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 255, 255, 0.2),
+        rgba(255, 0, 255, 0.2)
+    );
+    opacity: 0.12;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}
+
+.panel:hover .hint {
+    opacity: 0.45;
+}

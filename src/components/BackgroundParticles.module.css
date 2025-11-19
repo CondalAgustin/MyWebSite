@@ -1,0 +1,14 @@
+.particlesContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Asegúrate que esté detrás del contenido */
+  pointer-events: none; /* Para que no interfiera con clicks */
+  overflow: hidden;
+}
+
+.particle {
+  filter: blur(1px);
+}

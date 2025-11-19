@@ -1,0 +1,109 @@
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    /* IMPORTANTÍSIMO */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    margin-top: 0.8rem;
+    color: var(--neon-blue);
+}
+
+.quote {
+    margin-top: 2.2rem;
+    opacity: 1.5;
+    margin-inline: auto;
+    line-height: 1.5;
+    font-style: italic;
+
+    color: rgba(235, 232, 232, 0.8);
+    border-left-color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* BLOB NEON 1 */
+.blob1 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--neon-blue);
+    filter: blur(150px);
+    top: -50px;
+    left: -50px;
+    opacity: 0.4;
+    animation: float 10s infinite alternate;
+}
+
+/* BLOB NEON 2 */
+.blob2 {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: var(--neon-green);
+    filter: blur(180px);
+    bottom: -60px;
+    right: -80px;
+    opacity: 0.35;
+    animation: float 12s infinite alternate-reverse;
+}
+
+/* BLOB NEON 3 */
+.blob3 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--neon-magenta);
+    filter: blur(200px);
+    top: 30%;
+    right: 25%;
+    opacity: 0.25;
+    animation: float 14s infinite alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    100% {
+        transform: translateY(-40px) translateX(40px);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .quote {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+}

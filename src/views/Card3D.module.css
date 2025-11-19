@@ -1,0 +1,105 @@
+.wrapper {
+  perspective: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+  position: relative;
+}
+
+.card {
+  width: 650px;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: grab;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+/* Cara frontal */
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+/* Contenido frontal */
+.left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.right {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.role {
+  font-size: 20px;
+  font-weight: 500;
+  color: #444;
+  margin: 5px 0 15px;
+}
+
+.text {
+  font-size: 15px;
+  color: #555;
+}
+
+/* Parte trasera */
+.back {
+  transform: rotateY(180deg);
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.skillsTitle {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.skills {
+  width: 100%;
+  margin: 4px 0;
+}
+
+/* Hint */
+.hint {
+  position: absolute;
+  bottom: -35px;
+  font-size: 14px;
+  color: white;
+  opacity: 0.5;
+  pointer-events: none;
+}

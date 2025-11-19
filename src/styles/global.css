@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0A0A0E;
+  font-family: 'Inter', sans-serif;
+  color: #F0F0F3;
+  overflow-x: hidden;
+}
+
+:root {
+  --neon-blue: #00C2FF;
+  --neon-green: #00FFEA;
+  --neon-magenta: #C93DF9;
+  --text-light: #F0F0F3;
+}

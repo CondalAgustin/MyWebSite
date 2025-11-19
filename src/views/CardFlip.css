@@ -1,0 +1,49 @@
+.flip-container {
+  aspect-ratio: 16 / 10;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+
+.flip-inner {
+  transform-style: preserve-3d;
+}
+
+
+
+/* Contenedor general para centrar */
+.flip-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0f172a;
+  /* opcional: fondo oscuro como en tu imagen */
+}
+
+
+
+.flip-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 18px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  backface-visibility: hidden;
+}
+
+
+/* FRONT */
+.flip-front {
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
+  color: white;
+}
+
+/* BACK (rotated -180 so se ve bien al girar) */
+.flip-back {
+  background: white;
+  color: #111;
+  transform: rotateY(180deg);
+  /* Eliminar border completamente */
+  border: none;
+}
