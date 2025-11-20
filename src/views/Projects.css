@@ -1,0 +1,243 @@
+.reveal-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, transparent, #00caff, transparent);
+  transition: width 0.5s ease;
+}
+
+.project-card:hover .reveal-line {
+  width: 100%;
+}
+
+.see-more {
+  border: none;
+  background: transparent;
+  color: #d8ccff;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.see-more:hover {
+  color: rgb(47, 143, 182);
+  transform: translateX(4px);
+}
+
+
+/* CARD PROFESIONAL + ICONO + VER MÁS */
+.clean-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+}
+
+.clean-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+/* Icono */
+.project-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+}
+
+/* Texto */
+.card-content h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card-content p {
+  font-size: 15px;
+  opacity: 0.85;
+  margin: 6px 0 14px;
+}
+
+/* BOTÓN VER MÁS */
+
+
+
+
+/* CONTENEDOR DE CADA CARD */
+.project-container {
+  position: relative;
+  width: 100%;
+}
+
+/* REVEAL LINE */
+.reveal-line {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #a78bfa, #818cf8);
+  transform-origin: top;
+  border-radius: 4px;
+  opacity: 0;
+}
+
+/* REESTILIZADO DE CARD (minimalista premium) */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: white;
+  position: relative;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.35);
+  transform: translateY(-5px);
+}
+
+/* TITULOS */
+.project-card h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.project-card p {
+  opacity: 0.85;
+  line-height: 1.45;
+}
+
+
+.projects-background {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.projects-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/src/assets/prototipo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(3px);
+  transform: scale(1.1);
+  /* evita bordes negros del blur */
+
+  z-index: -2;
+}
+
+/* LUZ QUE CAE */
+.falling-glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgb(70, 241, 241), transparent 60%);
+  filter: blur(70px);
+  animation: glow-fall 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glow-fall {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: translate(-50%, 130%);
+    opacity: 0.15;
+  }
+}
+
+/* CONTENIDO */
+.projects-wrapper {
+  padding: 120px 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.projects-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #c084fc, #818cf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.projects-list {
+  display: grid;
+  padding: 10px 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.project-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+
+  border-radius: 18px;
+  padding: 25px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  color: white;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive: 2 por fila */
+@media (max-width: 992px) {
+  .projects-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: 1 por fila */
+@media (max-width: 600px) {
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+}

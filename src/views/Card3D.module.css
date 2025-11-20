@@ -1,105 +1,156 @@
-.wrapper {
-  perspective: 1200px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 120px;
-  position: relative;
-}
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 300px;
+    cursor: pointer;
 
-.card {
-  width: 650px;
-  height: 320px;
-  position: relative;
-  transform-style: preserve-3d;
-  cursor: grab;
-}
+  }
 
-.card:active {
-  cursor: grabbing;
-}
+  /* --- CARD --- */
+  .card {
 
-/* Cara frontal */
-.front,
-.back {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
+    width: 680px;
+    height: 360px;
+    border-radius: 22px;
+    background: rgba(20, 20, 30, 0.88);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+    padding: 22px;
+    display: flex;
+    transform-style: preserve-3d;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
 
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(12px);
+  .card:hover {
+    box-shadow:
+      0 25px 50px rgba(0, 0, 0, 0.55),
+      0 0 12px rgba(100, 100, 255, 0.25);
+  }
 
-  display: flex;
-  align-items: center;
-  padding: 25px;
-  transition: all 0.3s ease;
-}
 
-/* Contenido frontal */
-.left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+  }
 
-.photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
+  /* Borde animado premium */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
 
-.right {
-  flex: 2;
-  padding-left: 20px;
-}
+    /* Gradiente elegante, colores neutros */
+    background: linear-gradient(120deg,
+        rgba(0, 0, 0, 0.4),
+        rgb(0, 0, 0),
+        rgba(27, 115, 231, 0.5),
+        rgba(0, 0, 0, 0.4));
+    background-size: 300% 300%;
+    animation: borderMove 4s ease infinite;
 
-.name {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0;
-}
+    z-index: 0;
+  }
 
-.role {
-  font-size: 20px;
-  font-weight: 500;
-  color: #444;
-  margin: 5px 0 15px;
-}
+  @keyframes borderMove {
+    0% {
+      background-position: 0% 50%;
+    }
 
-.text {
-  font-size: 15px;
-  color: #555;
-}
+    50% {
+      background-position: 100% 50%;
+    }
 
-/* Parte trasera */
-.back {
-  transform: rotateY(180deg);
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-}
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
-.skillsTitle {
-  font-size: 24px;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
+  /* El contenido va arriba del borde animado */
+  .card>* {
+    position: relative;
+    z-index: 2;
+  }
 
-.skills {
-  width: 100%;
-  margin: 4px 0;
-}
 
-/* Hint */
-.hint {
-  position: absolute;
-  bottom: -35px;
-  font-size: 14px;
-  color: white;
-  opacity: 0.5;
-  pointer-events: none;
-}
+
+  /* CONTENIDO INTERNO */
+  .front {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* --- IMAGEN --- */
+  .left {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo {
+    width: 85%;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  /* --- TEXTO DERECHO --- */
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 18px;
+    color: #e5e7eb;
+  }
+
+  .name {
+    font-size: 1.9rem;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .role {
+    margin: 4px 0 12px;
+    color: #93c5fd;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  /* DESCRIPCIÓN */
+  .description {
+    font-size: 0.94rem;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    color: #cbd5e1;
+  }
+
+  /* --- SKILLS --- */
+  .skillsBox {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+  }
+
+  .skillsTitle {
+    font-size: 1rem;
+    color: #60a5fa;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+
+  .skillsImgs img {
+    width: 100%;
+    border-radius: 4px;
+    opacity: 0.95;
+  }
