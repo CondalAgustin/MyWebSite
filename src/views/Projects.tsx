@@ -15,7 +15,7 @@ export default function Projects() {
             <div className="falling-glow"></div>
 
             <div className="projects-wrapper">
-                <h2 className="projects-title">Mis Proyectos</h2>
+                <h2 className="projects-title">My projects</h2>
 
                 <div className="projects-list">
                     {projects.map((p, i) => {

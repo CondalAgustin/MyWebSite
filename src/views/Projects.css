@@ -135,7 +135,7 @@
 .projects-background {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 120vh;
   overflow: hidden;
 }
 

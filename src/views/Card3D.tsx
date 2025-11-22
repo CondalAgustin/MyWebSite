@@ -1,4 +1,4 @@
- import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 import styles from "./Card3D.module.css";
 import logo from "../assets/icono.png";
@@ -25,7 +25,7 @@ export default function Card3D() {
     shadowY.set((y - centerY) / 20);
   };
 
-   
+
   useEffect(() => {
     const interval = setInterval(() => {
       animate(rotateY, 360, {
@@ -33,7 +33,7 @@ export default function Card3D() {
         ease: "easeInOut",
         onComplete: () => rotateY.set(0), // vuelve al estado inicial
       });
-    }, 5000);  
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [rotateY]);

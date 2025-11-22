@@ -1,7 +1,7 @@
 import CardFlip from "./views/FlipCard";
 import Projects from "./views/Projects";
 import BackgroundParticles from "./components/BackgroundParticles";
-
+import Contact from "./components/Contact/Contact";
 function App() {
   return (
     <>
@@ -20,6 +20,11 @@ function App() {
       {/* SECTION 2 - Proyectos sin partículas */}
       <section>
         <Projects />
+      </section>
+
+       {/* SECTION 3 - Contacto */}
+      <section>
+        <Contact />
       </section>
     </>
   );
